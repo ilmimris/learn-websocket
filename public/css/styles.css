@@ -1,0 +1,21 @@
+.container-fluid {
+    height: 90%;
+}
+
+#online-users {
+    height: 90%;
+    overflow-y: auto;
+}
+
+.message-items {
+    overflow-y: scroll;
+}
+
+.message-input input {
+    border: 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.message-input *:focus{
+    outline: none;
+}
