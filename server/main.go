@@ -36,6 +36,8 @@ func handleMessages() {
 func main() {
 	app := fiber.New()
 
+	app.Static("/", "../public")
+
 	app.Use("/ws", func(c *fiber.Ctx) error {
 		// IsWebSocketUpgrade returns true if the client
 		// requested upgrade to the WebSocket protocol.
@@ -45,8 +47,6 @@ func main() {
 		}
 		return fiber.ErrUpgradeRequired
 	})
-
-	app.Static("/", "../public")
 
 	app.Get("/ws", websocket.New(func(c *websocket.Conn) {
 		// c.Locals is added to the *websocket.Conn
